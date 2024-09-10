@@ -28,9 +28,10 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rc_favorite"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
         android:layout_marginHorizontal="@dimen/padding_medium"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/item_favorite" />
 </LinearLayout>

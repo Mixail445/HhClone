@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/log_nav"
+    app:startDestination="@id/fragmentInputOne">
+
+    <fragment
+        android:id="@+id/fragmentInputOne"
+        android:name="com.example.login.inputOne.ui.FragmentInputOne"
+        android:label="FragmentInputOne" >
+        <action
+            android:id="@+id/action_fragmentInputOne_to_fragmentInputTwo"
+            app:destination="@id/fragmentInputTwo"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentInputTwo"
+        android:name="com.example.login.inputTwo.FragmentInputTwo"
+        android:label="FragmentInputTwo">
+        <argument
+            android:name="email"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_fragmentInputTwo_to_bottom"
+            app:destination="@id/bottom" />
+    </fragment>
+</navigation>

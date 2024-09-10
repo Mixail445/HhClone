@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/main_bg"
+    android:layout_width="match_parent"
+    android:id="@+id/detail_search"
+    android:layout_height="match_parent">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"
+        android:text="Ваши задачи"
+        style="@style/Title_1"
+        app:layout_constraintEnd_toEndOf="@+id/tv_more_text"
+        app:layout_constraintStart_toStartOf="@+id/tv_more_text"
+        app:layout_constraintTop_toBottomOf="@+id/tv_more_text" />
+
+    <ImageView
+        android:id="@+id/ic_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon_left_arrow" />
+
+    <ImageView
+        android:id="@+id/ic_favorites"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon_heart" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ic_favorites"
+        app:layout_constraintEnd_toStartOf="@+id/ic_favorites"
+        app:layout_constraintTop_toTopOf="@+id/ic_favorites"
+        app:srcCompat="@drawable/icon_share" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
+        app:layout_constraintEnd_toStartOf="@+id/imageView6"
+        app:layout_constraintTop_toTopOf="@+id/imageView6"
+        app:srcCompat="@drawable/icon_eye" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        style="@style/Title_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:text="UI/UX Designer"
+        app:layout_constraintStart_toStartOf="@+id/ic_back"
+        app:layout_constraintTop_toBottomOf="@+id/ic_back" />
+
+    <TextView
+        style="@style/Text_1"
+        android:id="@+id/tv_salary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Уровень дохода не указан"
+        app:layout_constraintStart_toStartOf="@+id/tv_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+    <TextView
+        android:id="@+id/tv_experience"
+        style="@style/Text_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="16dp"
+        android:text="Требуемый опыт: от 1 года до 3 лет"
+        app:layout_constraintStart_toStartOf="@+id/tv_salary"
+        app:layout_constraintTop_toBottomOf="@+id/tv_salary" />
+
+    <TextView
+        style="@style/Text_1"
+        android:id="@+id/tv_schedules"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Полная занятость, полный день"
+        app:layout_constraintStart_toStartOf="@+id/tv_experience"
+        app:layout_constraintTop_toBottomOf="@+id/tv_experience" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_schedules"
+                app:layout_constraintTop_toBottomOf="@+id/tv_schedules"
+                android:gravity="start">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cv_responses"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                  android:visibility="gone"
+                android:background="@drawable/corner_8_dp"
+                android:backgroundTint="@color/dark_green"
+                app:cardCornerRadius="@dimen/padding_small"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/cv_loocking"
+                app:layout_constraintWidth_percent="0.49">
+
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="@dimen/padding_small"
+                    android:layout_marginRight="@dimen/padding_small"
+                    app:srcCompat="@drawable/icon_profile_green" />
+
+                <TextView
+                    android:id="@+id/bv_text_responses"
+                    style="@style/Text_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/padding_small"
+                    android:layout_marginTop="@dimen/padding_small"
+                    android:text="147 человек уже откликнулись" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_loocking"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/corner_8_dp"
+                android:backgroundTint="@color/dark_green"
+                android:paddingLeft="4dp"
+                android:foregroundGravity="left"
+                app:cardCornerRadius="@dimen/padding_small"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintWidth_percent="0.49"
+               >
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="@dimen/padding_small"
+                    android:layout_marginRight="@dimen/padding_small"
+                    app:srcCompat="@drawable/icon_eye_green" />
+
+                <TextView
+                    android:id="@+id/bv_text_loocking"
+                    style="@style/Text_1"
+                    android:layout_width="144dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/padding_small"
+                    android:layout_marginTop="@dimen/padding_small"
+                    android:text="2 человека сейчас смотрят" />
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
+        android:layout_width="0dp"
+        android:layout_height="134dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/grey_1"
+        android:background="@drawable/corner_8_dp"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_name_company"
+                style="@style/Title_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_medium"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="@dimen/padding_small"
+                android:text="Мобирикс" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_medium"
+                android:layout_marginRight="@dimen/padding_medium"
+                android:layout_marginBottom="@dimen/padding_small"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/mapss" />
+
+            <TextView
+                android:id="@+id/tv_address_hard"
+                style="@style/Text_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_medium"
+                android:text="Минск, улица Бирюзова, 4/5" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/tv_more_text"
+        style="@style/Text_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_marginTop="@dimen/padding_medium"
+        android:layout_marginHorizontal="@dimen/padding_medium"
+        android:text="@string/text_mobirex"
+        app:layout_constraintEnd_toEndOf="@+id/materialCardView"
+        app:layout_constraintStart_toStartOf="@+id/materialCardView"
+        app:layout_constraintTop_toBottomOf="@+id/materialCardView" />
+
+    <TextView
+        android:id="@+id/tv_responsivility"
+        android:layout_width="match_parent"
+        style="@style/Text_1"
+        android:layout_marginTop="@dimen/padding_small"
+        android:layout_marginHorizontal="@dimen/padding_medium"
+        android:layout_height="wrap_content"
+        android:text="@string/text_task"
+        app:layout_constraintEnd_toEndOf="@+id/textView11"
+        app:layout_constraintStart_toStartOf="@+id/textView11"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="@dimen/padding_medium"
+                app:layout_constraintEnd_toEndOf="@+id/tv_responsivility"
+                app:layout_constraintStart_toStartOf="@+id/tv_responsivility"
+                app:layout_constraintTop_toBottomOf="@+id/tv_responsivility"
+                android:layout_height="wrap_content"
+                style="@style/Title_4"
+                android:layout_marginTop="32dp"
+                android:text="Задайте вопрос работодателю"
+                tools:layout_editor_absoluteY="49dp" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/padding_small"
+                android:layout_height="wrap_content"
+                android:text="Он получит его с откликом на вакансию"
+                style="@style/Title_4"
+                android:textColor="@color/grey_3"
+                android:layout_marginHorizontal="@dimen/padding_medium"
+
+                app:layout_constraintEnd_toEndOf="@+id/textView13"
+                app:layout_constraintStart_toStartOf="@+id/textView13"
+                app:layout_constraintTop_toBottomOf="@+id/textView13"
+               />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rc_button"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:layout_width="match_parent"
+                android:layout_height="156dp"
+                android:layout_marginHorizontal="@dimen/padding_medium"
+                android:layout_marginTop="@dimen/padding_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.968"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+            <Button
+                android:id="@+id/bv_responses_dialog"
+                style="@style/Bottom_text_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/padding_medium"
+                android:layout_marginVertical="@dimen/padding_medium"
+                android:background="@drawable/bottom_selector"
+                android:backgroundTint="@color/green"
+                android:text="Откликнуться"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/rc_button"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rc_button" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</FrameLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- basic -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grey_1">#222325</color>
+    <color name="grey_2">#313234</color>
+    <color name="grey_3">#858688</color>
+    <color name="grey_4">#9F9F9F</color>
+    <color name="grey_5">#DBDBDB</color>
+    <!-- special -->
+    <color name="blue">#2B7EFE</color>
+    <color name="dark_blue">#00427D</color>
+    <color name="green">#4CB24E</color>
+    <color name="dark_green">#015905</color>
+    <color name="red">#FF0000</color>
+    <!-- shadow -->
+    <color name="Shadows">#0C0C0C</color>
+    <!-- transparent -->
+    <color name="transparent">#00000000</color>
+
+    <color name="line_grey">#1D1E20</color>
+
+    <color name="green_line">#5E5F61</color>
+
+    <color name="basic_blue">#2261BC</color>
+    <color name="grey">#9F9F9F</color>
+    <color name="main_bg">#0C0C0C</color>
+    <color name="card_grey">#2F3035</color>
+    <color name="inner_grey">#3E3F43</color>
+    <color name="hint">#9F9F9F</color>
+
+    <color name="title_bg">#D9D9D9</color>
+    <color name="sheet_bg">#242529</color>
+</resources>

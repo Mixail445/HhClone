@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Title_1">
+        <item name="android:textSize">22sp</item>
+        <item name="android:fontFamily">@font/font_semibold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Title_2">
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/font_semibold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Title_3">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/font_medium</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Title_4">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/font_medium</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text_1">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/font_regular</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Bottom_text_1">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/font_semibold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Bottom_text_2">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/font_regular</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Tab_text">
+        <item name="android:textSize">10sp</item>
+        <item name="android:fontFamily">@font/font_regular</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Number">
+        <item name="android:textSize">7sp</item>
+        <item name="android:fontFamily">@font/font_regular</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="BlackScreenWhiteText" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">#000000</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="BottomNavigationTextStyle">
+        <item name="android:textSize">10sp</item>
+        <item name="android:fontFamily">@font/font_medium</item>
+    </style>
+
+    <style name="PlaceholderTextStyle"> parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="ButtonStyleGreen">
+        <item name="android:layout_width">330dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:background">@drawable/bottom_selector_green</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/font_regular</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="ButtonStyleBlue">
+        <item name="android:layout_width">330dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/font_regular</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:background">@drawable/bottom_selector</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="RoundedCorners" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+    <style name="TextInputLayoutBoxColor" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">@color/grey_2</item>
+        <item name="boxStrokeColor">@color/transparent</item>
+        <item name="boxStrokeErrorColor">@color/red</item>
+        <item name="android:textColorHint">@color/grey_3</item>
+    </style>
+
+    <style name="TextAppearance.App.TextInputLayout" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="ModalBottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
+    </style>
+    <style name="MyErrorText" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textColor">@color/red</item>
+    </style>
+</resources>

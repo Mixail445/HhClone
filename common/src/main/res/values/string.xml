@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="search">Поиск</string>
+    <string name="favorites">Избранное</string>
+    <string name="responses">Отклики</string>
+    <string name="message">Сообщения</string>
+    <string name="profile">Профиль</string>
+</resources>

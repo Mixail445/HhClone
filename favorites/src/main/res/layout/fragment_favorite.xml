@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/main_bg"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title_favorite"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="24dp"
+        style="@style/Title_1"
+        android:layout_marginHorizontal="@dimen/padding_medium"
+        android:layout_height="wrap_content"
+        android:text="Избранное" />
+
+    <TextView
+        android:id="@+id/child_title_favorite"
+        android:layout_marginHorizontal="@dimen/padding_medium"
+        android:layout_marginBottom="@dimen/padding_medium"
+        android:layout_width="wrap_content"
+        style="@style/Text_1"
+        android:layout_height="wrap_content"
+        android:text="1 вакансия" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rc_favorite"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/padding_medium"
+        tools:listitem="@layout/item_favorite" />
+</LinearLayout>

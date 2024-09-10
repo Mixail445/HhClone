@@ -1,4 +1,4 @@
-package com.example.favorites.data.local
+package com.example.data
 
 import androidx.room.Dao
 import androidx.room.Delete
@@ -7,7 +7,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 
 @Dao
-interface FavoriteDao {
+interface SearchDao {
     @Query("SELECT * FROM favorite_vacancies")
     suspend fun getAllFavorites(): List<FavoriteVacancyEntity>
 

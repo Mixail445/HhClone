@@ -1,6 +1,8 @@
 package com.example.favorites.data.local
 
 import com.example.common.common.DispatchersProvider
+import com.example.data.FavoriteVacancyEntity
+import com.example.data.SearchDao
 import com.example.favorites.domain.FavoriteLocalSource
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
@@ -8,7 +10,7 @@ import javax.inject.Inject
 class FavoriteLocalSourceImpl
     @Inject
     constructor(
-        private val dao: FavoriteDao,
+        private val dao: SearchDao,
         private val dispatchersProvider: DispatchersProvider,
     ) : FavoriteLocalSource {
         override suspend fun getAllFavorites(): List<FavoriteVacancyEntity> =

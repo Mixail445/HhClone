@@ -41,24 +41,6 @@ class FragmentInputTwo : Fragment(R.layout.fragment_input_two) {
         }
     }
 
-    private fun handleUiLabel(uiLabel: InputTwoView.UiLabel): Unit =
-        when (uiLabel) {
-            is InputTwoView.UiLabel.ShowBottomFragment -> router.navigateTo(screen = uiLabel.screens)
-        }
-
-    private fun initViewModel() {
-        with(viewModel) {
-            subscribe(uiLabels, ::handleUiLabel)
-            launchAndRepeatWithViewLifecycle { uiState.collect(::handleState) }
-        }
-    }
-
-    private fun handleState(model: InputTwoView.Model): Unit =
-        model.run {
-            binding.textView2.text = model.email
-            binding.button6.isEnabled = model.bottomActive
-        }
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -70,18 +52,57 @@ class FragmentInputTwo : Fragment(R.layout.fragment_input_two) {
         return binding.root
     }
 
-    private fun initView() {
-        binding.button6.setOnClickListener {
-            viewModel.onEvent(InputTwoView.Event.OnClickNext)
-        }
-        setupOtpInputs()
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        initDagger()
     }
+
+    override fun onStart() {
+        super.onStart()
+        router.init(this)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        router.clear()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+    private fun initView() =
+        with(binding) {
+            bvResponses.setOnClickListener {
+                viewModel.onEvent(InputTwoView.Event.OnClickNext)
+            }
+            setupOtpInputs()
+        }
+
+    private fun initViewModel() =
+        with(viewModel) {
+            subscribe(uiLabels, ::handleUiLabel)
+            launchAndRepeatWithViewLifecycle { uiState.collect(::handleState) }
+        }
+
+    private fun handleUiLabel(uiLabel: InputTwoView.UiLabel) {
+        when (uiLabel) {
+            is InputTwoView.UiLabel.ShowBottomFragment -> router.navigateTo(uiLabel.screens)
+        }
+    }
+
+    private fun handleState(model: InputTwoView.Model) =
+        with(binding) {
+            textView2.text = model.email
+            bvResponses.isEnabled = model.bottomActive
+        }
 
     private fun setupOtpInputs() {
         val otpFields = arrayOf(binding.etOne, binding.edTwo, binding.etThree, binding.etFour)
 
-        for (i in otpFields.indices) {
-            otpFields[i].addTextChangedListener(
+        otpFields.forEachIndexed { index, editText ->
+            editText.addTextChangedListener(
                 object : TextWatcher {
                     override fun beforeTextChanged(
                         s: CharSequence?,
@@ -99,41 +120,26 @@ class FragmentInputTwo : Fragment(R.layout.fragment_input_two) {
 
                     override fun afterTextChanged(s: Editable?) {
                         val text = s?.toString() ?: ""
-                        viewModel.onOtpDigitChanged(i, text)
+                        viewModel.onOtpDigitChanged(index, text)
 
-                        if (text.length == 1 && i < otpFields.size - 1) {
-                            otpFields[i + 1].requestFocus()
+                        if (text.length == 1 && index < otpFields.size - 1) {
+                            otpFields[index + 1].requestFocus()
                         }
                     }
                 },
             )
 
-            otpFields[i].setOnKeyListener { _, keyCode, event ->
+            editText.setOnKeyListener { _, keyCode, event ->
                 if (event.action == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_DEL) {
-                    if (otpFields[i].text.isEmpty() && i > 0) {
-                        otpFields[i - 1].requestFocus()
+                    if (editText.text.isEmpty() && index > 0) {
+                        otpFields[index - 1].requestFocus()
                     }
                 }
                 false
             }
         }
 
-        otpFields[0].requestFocus()
-    }
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        initDagger()
-    }
-
-    override fun onStop() {
-        super.onStop()
-        router.clear()
-    }
-
-    override fun onStart() {
-        super.onStart()
-        router.init(this@FragmentInputTwo)
+        otpFields.first().requestFocus()
     }
 
     private fun initDagger() {

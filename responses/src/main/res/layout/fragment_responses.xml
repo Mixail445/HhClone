@@ -7,11 +7,11 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_responses"
         android:layout_width="wrap_content"
         style="@style/Title_1"
         android:layout_height="wrap_content"
-        android:text="This is responses"
+        android:text="@string/text_tv_responses"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

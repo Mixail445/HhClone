@@ -10,27 +10,28 @@
     <TextView
         android:id="@+id/title_favorite"
         android:layout_width="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginTop="@dimen/spacing_32"
+        android:layout_marginBottom="@dimen/spacing_large"
         style="@style/Title_1"
-        android:layout_marginHorizontal="@dimen/padding_medium"
+        android:layout_marginHorizontal="@dimen/spacing_medium"
         android:layout_height="wrap_content"
-        android:text="Избранное" />
+        android:text="@string/text_title_favorite" />
 
     <TextView
         android:id="@+id/child_title_favorite"
-        android:layout_marginHorizontal="@dimen/padding_medium"
-        android:layout_marginBottom="@dimen/padding_medium"
+        android:layout_marginHorizontal="@dimen/spacing_medium"
+        android:layout_marginBottom="@dimen/spacing_medium"
         android:layout_width="wrap_content"
         style="@style/Text_1"
         android:layout_height="wrap_content"
-        android:text="1 вакансия" />
+        tools:text="@string/text_child_title_favorite" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rc_favorite"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/padding_medium"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_marginHorizontal="@dimen/spacing_medium"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/item_favorite" />
 </LinearLayout>

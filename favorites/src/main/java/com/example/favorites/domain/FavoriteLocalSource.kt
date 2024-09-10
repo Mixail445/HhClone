@@ -1,6 +1,6 @@
 package com.example.favorites.domain
 
-import com.example.favorites.data.local.FavoriteVacancyEntity
+import com.example.data.FavoriteVacancyEntity
 
 interface FavoriteLocalSource {
     suspend fun getAllFavorites(): List<FavoriteVacancyEntity>

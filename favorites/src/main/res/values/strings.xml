@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="loockingNumb">Сейчас просматривает 1 человек</string>
+    <string name="text_tv_title">UI/UX Designer</string>
+    <string name="text_tv_company">Мобирикс</string>
+    <string name="text_tv_experience">Опыт от 1 года до 3 лет</string>
+    <string name="text_tv_data">Опубликовано 20 февраля</string>
+    <string name="text_bv_responses">Отлкикнуться</string>
+    <string name="text_tv_address">Минск</string>
+    <string name="text_child_title_favorite">1 вакансия</string>
+    <string name="text_title_favorite">Избранное</string>
+</resources>

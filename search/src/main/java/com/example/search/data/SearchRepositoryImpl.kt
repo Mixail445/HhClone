@@ -2,6 +2,7 @@ package com.example.search.data
 
 import com.example.common.utils.AppResult
 import com.example.common.utils.ResultWrapper
+import com.example.search.data.local.mapToDomain
 import com.example.search.domain.SearchLocalSource
 import com.example.search.domain.SearchRemoteSource
 import com.example.search.domain.VacancyRepository

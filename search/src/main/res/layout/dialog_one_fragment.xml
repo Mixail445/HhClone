@@ -7,11 +7,11 @@
     android:layout_height="wrap_content">
 
     <com.google.android.material.card.MaterialCardView
-        android:layout_width="38dp"
+        android:layout_width="@dimen/spacing_small"
         app:cardCornerRadius="2dp"
         android:layout_height="5dp"
         android:backgroundTint="@color/grey_2"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/spacing_medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -20,63 +20,63 @@
         android:id="@+id/materialCardView2"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="@dimen/spacing_medium"
         android:layout_marginTop="45dp"
         android:backgroundTint="@color/blue"
-        app:cardCornerRadius="24dp"
+        app:cardCornerRadius="@dimen/spacing_large"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
 
         <ImageView
-            android:id="@+id/imageView10"
+            android:id="@+id/iv_main"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/avatar_modal" />
     </com.google.android.material.card.MaterialCardView>
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/tv_title_resp"
         style="@style/Text_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="Резюме для отклика"
+        android:layout_marginStart="@dimen/spacing_medium"
+        android:text="@string/text_tv_title_resp"
         android:textColor="@color/grey_3"
         app:layout_constraintStart_toEndOf="@+id/materialCardView2"
         app:layout_constraintTop_toTopOf="@+id/materialCardView2" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/tv_name_company"
         style="@style/Title_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="UI/UX дизайнер "
+        android:layout_marginStart="@dimen/spacing_medium"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:text="@string/text_tv_name_compan"
         app:layout_constraintStart_toEndOf="@+id/materialCardView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_resp" />
 
     <View
         android:id="@+id/view"
         android:layout_width="0dp"
         android:layout_height="1dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="@dimen/spacing_medium"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:layout_marginEnd="@dimen/spacing_medium"
         android:background="@color/grey_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_name_company" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/tv_add_text"
         style="@style/Bottom_text_1"
         android:textColor="@color/green"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="Добавить сопроводительное"
+        android:text="@string/text_tv_add_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view" />
@@ -85,15 +85,16 @@
         android:id="@+id/bv_responses"
         android:layout_width="0dp"
         android:layout_height="32dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="@dimen/spacing_medium"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="@dimen/spacing_medium"
+        android:layout_marginBottom="@dimen/spacing_32"
+        style="@style/Bottom_text_1"
         android:background="@drawable/bottom_selector_green"
         android:gravity="center"
-        android:text="Откликнуться"
+        android:text="@string/text_responses"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_add_text" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,10 +17,10 @@
             android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginHorizontal="@dimen/padding_medium"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginHorizontal="@dimen/spacing_medium"
+            android:layout_marginStart="@dimen/spacing_medium"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:layout_marginEnd="@dimen/spacing_medium"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -65,7 +65,7 @@
                 android:layout_width="37dp"
                 android:layout_height="37dp"
                 android:layout_gravity="bottom"
-                android:layout_marginLeft="@dimen/padding_small"
+                android:layout_marginLeft="@dimen/spacing_small"
                 android:background="@drawable/corner_10_dp"
                 app:srcCompat="@drawable/icon_filter" />
 
@@ -77,58 +77,61 @@
             android:id="@+id/rc_child"
             android:layout_width="match_parent"
             android:layout_height="120dp"
-            android:layout_marginHorizontal="@dimen/padding_medium"
-            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="@dimen/spacing_medium"
+            android:layout_marginTop="@dimen/spacing_medium"
             android:orientation="horizontal"
+            android:visibility="visible"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
-            app:layout_constraintStart_toStartOf="@+id/linearLayout2"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toEndOf="@+id/linear_option"
+            app:layout_constraintStart_toStartOf="@+id/linear_option"
+            app:layout_constraintTop_toBottomOf="@+id/linear_option"
             tools:itemCount="3"
             tools:listitem="@layout/item_fast_filter" />
 
         <LinearLayout
             android:id="@+id/linear_option"
             android:layout_width="match_parent"
-            android:visibility="gone"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/padding_medium"
-            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="@dimen/spacing_medium"
+            android:layout_marginTop="@dimen/spacing_medium"
             android:orientation="horizontal"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
             app:layout_constraintStart_toStartOf="@+id/linearLayout2"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
             <TextView
-                android:id="@+id/textView20"
+                android:id="@+id/tv_count_vacancy"
                 style="@style/Text_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="145 вакансий" />
+                android:text="@string/text_tv_count_vacancy" />
 
             <TextView
-                android:id="@+id/textView21"
+                android:id="@+id/tv_sort"
                 style="@style/Text_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="По соответствию"
+                android:text="@string/text_tv_sort"
                 android:textColor="@color/blue" />
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/iv_sort"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/icon_sort" />
         </LinearLayout>
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/tv_vacancy_for_you"
             style="@style/Title_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/padding_medium"
-            android:text="Вакансии для вас"
+            android:layout_marginHorizontal="@dimen/spacing_medium"
+            android:layout_marginTop="@dimen/spacing_32"
+            android:text="@string/text_tv_vacancy_for_you"
+            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="@+id/rc_child"
             app:layout_constraintStart_toStartOf="@+id/rc_child"
             app:layout_constraintTop_toBottomOf="@+id/rc_child" />
@@ -137,15 +140,14 @@
             android:id="@+id/rc_main"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginHorizontal="@dimen/padding_medium"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginHorizontal="@dimen/spacing_medium"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:layout_marginBottom="@dimen/spacing_large"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toTopOf="@+id/button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintTop_toBottomOf="@+id/tv_vacancy_for_you"
             tools:itemCount="3"
             tools:listitem="@layout/item_search" />
 
@@ -154,13 +156,12 @@
             style="@style/Bottom_text_1"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginHorizontal="@dimen/padding_medium"
-            android:layout_marginBottom="8dp"
+            android:layout_marginHorizontal="@dimen/spacing_medium"
+            android:layout_marginBottom="@dimen/spacing_small"
             android:background="@drawable/bottom_selector"
-            android:text="Еще 143 вакансии"
+            android:text="@string/text_button"
             android:textAllCaps="false"
             app:cornerRadius="35dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="16dp" />
+            app:layout_constraintBottom_toBottomOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

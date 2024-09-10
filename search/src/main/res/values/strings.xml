@@ -11,4 +11,32 @@
         интеграция на основе обратной связи от команды и пользователей;
         -Взаимодействовать с командой разработчиков для обеспечения точной реализации ваших дизайнов;
         -Анализ пользовательского опыта и адаптация под тренды.</string>
+    <string name="text_title">UI/UX Designer</string>
+    <string name="text_tv_salary">Уровень дохода не указан</string>
+    <string name="text_tv_experience">Требуемый опыт: от 1 года до 3 лет</string>
+    <string name="text_tv_schedules">Полная занятость, полный день</string>
+    <string name="text_bv_text_responses">147 человек уже откликнулись</string>
+    <string name="text_bv_text_loocking">2 человека сейчас смотрят</string>
+    <string name="text_tv_name_company">Мобирикс</string>
+    <string name="text_tv_address">Минск, улица Бирюзова, 4/5</string>
+    <string name="text_tv_no_spec">Задайте вопрос работодателю</string>
+    <string name="text_tv_resp_hint">Он получит его с откликом на вакансию</string>
+    <string name="text_responses">Откликнуться</string>
+    <string name="text_tv_title_resp">Резюме для отклика</string>
+    <string name="text_tv_name_compan">UI/UX дизайнер</string>
+    <string name="text_tv_add_text">Добавить сопроводительное</string>
+    <string name="text_et_cover_letter">Ваше сопроводительное письмо</string>
+    <string name="text_title_item_fast">Вакансии рядом с вами</string>
+    <string name="text_bottom_text_up">Поднять</string>
+    <string name="loockingNumb">Сейчас просматривает 1 человек</string>
+    <string name="text_tv_title">UI/UX Designer</string>
+    <string name="text_tv_company">Мобирикс</string>
+    <string name="text_tv_data">Опубликовано 20 февраля</string>
+    <string name="text_bv_responses">Отлкикнуться</string>
+    <string name="text_child_title_favorite">1 вакансия</string>
+    <string name="text_title_favorite">Избранное</string>
+    <string name="text_button">Еще 143 вакансии</string>
+    <string name="text_tv_vacancy_for_you">Вакансии для вас</string>
+    <string name="text_tv_count_vacancy">145 вакансий</string>
+    <string name="text_tv_sort">По соответствию</string>
 </resources>

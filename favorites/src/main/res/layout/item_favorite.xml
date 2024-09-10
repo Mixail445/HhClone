@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
-
     android:layout_height="wrap_content"
     android:background="@drawable/corner_8_dp">
 
@@ -15,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Сейчас просматривает 1 человек"
+        tools:text="@string/loockingNumb"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,9 +24,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="UI/UX Designer"
+        tools:text="@string/text_tv_title"
         app:layout_constraintStart_toStartOf="@+id/tv_lookingNumber"
-        app:layout_constraintTop_toBottomOf="@+id/tv_lookingNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_lookingNumber"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/tv_company"
@@ -35,12 +35,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:text="Мобирикс"
+        tools:text="@string/text_tv_company"
         app:layout_constraintStart_toStartOf="@+id/tv_address"
         app:layout_constraintTop_toBottomOf="@+id/tv_address" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/iv_helper"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -50,7 +50,7 @@
         app:srcCompat="@drawable/icon_check_mark" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/iv_helper_two"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -64,10 +64,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="Опыт от 1 года до 3 лет"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+        tools:text="@string/text_tv_experience"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_helper_two"
+        app:layout_constraintStart_toEndOf="@+id/iv_helper_two"
+        app:layout_constraintTop_toTopOf="@+id/iv_helper_two" />
 
     <TextView
         android:id="@+id/tv_data"
@@ -75,12 +75,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Опубликовано 20 февраля"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        tools:text="@string/text_tv_data"
+        app:layout_constraintStart_toStartOf="@+id/iv_helper_two"
+        app:layout_constraintTop_toBottomOf="@+id/iv_helper_two" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button3"
+        android:id="@+id/bv_responses"
         android:layout_width="0dp"
         android:layout_height="32dp"
         android:layout_marginStart="16dp"
@@ -89,7 +89,7 @@
         android:layout_marginBottom="16dp"
         android:background="@drawable/bottom_selector_green"
         android:gravity="center"
-        android:text="Отлкикнуться"
+        android:text="@string/text_bv_responses"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -101,7 +101,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Минск"
+        android:text="@string/text_tv_address"
         app:layout_constraintStart_toStartOf="@+id/tv_title"
         app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
@@ -109,8 +109,8 @@
         android:id="@+id/ic_favorite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="@dimen/spacing_medium"
+        android:layout_marginEnd="@dimen/spacing_medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/icon_heart" />

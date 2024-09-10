@@ -107,9 +107,9 @@ class SearchFragment : Fragment(R.layout.search_fragment) {
         adapterChild.items = model.itemChildRc
         binding.button.isVisible = !model.modeAllRcItem
         binding.rcChild.isVisible = !model.modeAllRcItem
-        binding.textView.isVisible = !model.modeAllRcItem
+        binding.tvSort.isVisible = !model.modeAllRcItem
         binding.linearOption.isVisible = model.modeAllRcItem
-        binding.textView20.text = model.countVacancy
+        binding.tvCountVacancy.text = model.countVacancy
         router.setBadge(1, model.countFavorite, this)
         if (model.modeAllRcItem) {
             binding.textInputEditText.startIconDrawable =

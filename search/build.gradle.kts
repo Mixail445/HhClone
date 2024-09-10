@@ -46,14 +46,8 @@ dependencies {
     implementation(libs.moshi)
     implementation(libs.moshi.kotlin)
     implementation(libs.retrofit)
-    //noinspection KaptUsageInsteadOfKsp
     kapt(libs.moshi.kotlin.codegen)
-    implementation(libs.androidx.room.runtime)
-    implementation(libs.androidx.room.ktx)
-    //noinspection KaptUsageInsteadOfKsp
-    kapt(libs.androidx.room.compiler)
     implementation(libs.glide)
-    kapt("com.github.bumptech.glide:compiler:4.15.1")
     implementation(libs.adapter.delegates)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)

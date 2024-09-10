@@ -39,18 +39,18 @@ class FavoriteViewModel
         private var _textCount: Int = 0
 
         init {
-            viewModelScope.launch {
-                initData()
-            }
+            viewModelScope.launch { initData() }
         }
 
-        private suspend fun initData() {
-            fetchReviews()
-        }
+        private suspend fun initData() = fetchReviews()
 
         private suspend fun fetchReviews() {
-            _favorite = repository.getFavorites().map { it.mapToUi(mapper) }
-            _textCount = repository.getFavoriteVacanciesCount()
+            val favorites = repository.getFavorites().map { it.mapToUi(mapper) }
+            val textCount = repository.getFavoriteVacanciesCount()
+
+            _favorite = favorites
+            _textCount = textCount
+
             _uiState.update {
                 it.copy(
                     itemRc = _favorite,

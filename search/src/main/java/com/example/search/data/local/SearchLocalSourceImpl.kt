@@ -1,6 +1,8 @@
 package com.example.search.data.local
 
 import com.example.common.common.DispatchersProvider
+import com.example.data.FavoriteVacancyEntity
+import com.example.data.SearchDao
 import com.example.search.domain.SearchLocalSource
 import kotlinx.coroutines.withContext
 import javax.inject.Inject

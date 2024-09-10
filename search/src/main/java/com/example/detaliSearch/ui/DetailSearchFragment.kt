@@ -48,7 +48,7 @@ class DetailSearchFragment : Fragment(R.layout.detail_search_fragment) {
         }
     }
 
-    val adapterButton =
+    private val adapterButton =
         DetailButtonAdapter(
             onItemClicked = { text ->
                 showDialog(text)
@@ -118,7 +118,7 @@ class DetailSearchFragment : Fragment(R.layout.detail_search_fragment) {
             bottomResponse.setOnClickListener {
                 bottomSheet.dismiss()
             }
-            val bottomAddMessage = view.findViewById<TextView>(R.id.textView17)
+            val bottomAddMessage = view.findViewById<TextView>(R.id.tv_add_text)
             bottomAddMessage.setOnClickListener {
                 bottomSheet.dismiss()
                 showDialog()

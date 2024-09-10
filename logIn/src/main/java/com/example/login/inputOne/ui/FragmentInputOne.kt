@@ -15,7 +15,6 @@ import com.example.login.R
 import com.example.login.databinding.FragmentInputOneBinding
 import com.example.login.inputOne.di.DaggerInputOneComponent
 import com.example.navigation.Router
-import com.example.navigation.Screens
 import com.example.navigation.di.ResourceProviderProvider
 import javax.inject.Inject
 import javax.inject.Named
@@ -43,75 +42,75 @@ class FragmentInputOne : Fragment(R.layout.fragment_input_one) {
         savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentInputOneBinding.inflate(inflater, container, false)
-        router.init(this@FragmentInputOne)
+        router.init(this)
         initView()
         initViewModel()
         return binding.root
     }
 
-    private fun initViewModel() {
+    private fun initViewModel() =
         with(viewModel) {
             subscribe(uiLabels, ::handleUiLabel)
             launchAndRepeatWithViewLifecycle { uiState.collect(::handleState) }
         }
-    }
 
-    private fun showInputTwoScreen(screens: Screens) {
-        router.navigateTo(screens)
-    }
-
-    private fun handleUiLabel(uiLabel: InputOneView.UiLabel): Unit =
+    private fun handleUiLabel(uiLabel: InputOneView.UiLabel) {
         when (uiLabel) {
-            is InputOneView.UiLabel.ShowInputTwoScreen -> showInputTwoScreen(uiLabel.screens)
-        }
-
-    private fun handleState(model: InputOneView.Model) {
-        if (binding.etMain.text.toString() != model.textEdit) {
-            binding.etMain.setText(model.textEdit)
-            binding.etMain.setSelection(model.textEdit.length)
-        }
-
-        binding.bvMain.isEnabled = model.isBottomActive
-
-        if (!model.showIconStart) {
-            binding.textInputLayout.startIconDrawable = null
-            binding.textInputLayout.error = null
-        } else {
-            binding.textInputLayout.setStartIconDrawable(com.example.common.R.drawable.icon_message)
-        }
-
-        if (model.wrongEmail) {
-            binding.textInputLayout.error = getString(R.string.error_email)
-            binding.textInputLayout.isErrorEnabled = true
-            binding.textInputLayout.boxStrokeColor = resources.getColor(com.example.common.R.color.grey_2, null)
-        } else {
-            binding.textInputLayout.error = null
-            binding.textInputLayout.isErrorEnabled = false
-            binding.textInputLayout.boxStrokeColor = resources.getColor(com.example.common.R.color.grey_2, null)
+            is InputOneView.UiLabel.ShowInputTwoScreen -> router.navigateTo(uiLabel.screens)
         }
     }
 
-    private fun initView() {
-        binding.textInputLayout.setEndIconOnClickListener {
-            viewModel.onEvent(InputOneView.Event.OnClickClearText)
-        }
+    private fun handleState(model: InputOneView.Model) =
+        with(binding) {
+            if (etMain.text.toString() != model.textEdit) {
+                etMain.setText(model.textEdit)
+                etMain.setSelection(model.textEdit.length)
+            }
 
-        binding.etMain.onTextChanged { text ->
-            viewModel.onEvent(InputOneView.Event.OnTextChanged(text))
-        }
+            bvMain.isEnabled = model.isBottomActive
 
-        binding.bvMain.setOnClickListener {
-            val bundle =
-                Bundle().apply {
-                    putString("email", viewModel.uiState.value.textEdit)
+            textInputLayout.apply {
+                if (!model.showIconStart) {
+                    startIconDrawable = null
+                    error = null
+                } else {
+                    setStartIconDrawable(com.example.common.R.drawable.icon_message)
                 }
-            viewModel.onEvent(InputOneView.Event.OnClickNext(bundle))
+
+                if (model.wrongEmail) {
+                    error = getString(R.string.error_email)
+                    isErrorEnabled = true
+                    boxStrokeColor = resources.getColor(com.example.common.R.color.grey_2, null)
+                } else {
+                    error = null
+                    isErrorEnabled = false
+                    boxStrokeColor = resources.getColor(com.example.common.R.color.grey_2, null)
+                }
+            }
         }
-    }
+
+    private fun initView() =
+        with(binding) {
+            textInputLayout.setEndIconOnClickListener {
+                viewModel.onEvent(InputOneView.Event.OnClickClearText)
+            }
+
+            etMain.onTextChanged { text ->
+                viewModel.onEvent(InputOneView.Event.OnTextChanged(text))
+            }
+
+            bvMain.setOnClickListener {
+                val bundle =
+                    Bundle().apply {
+                        putString("email", viewModel.uiState.value.textEdit)
+                    }
+                viewModel.onEvent(InputOneView.Event.OnClickNext(bundle))
+            }
+        }
 
     override fun onDestroyView() {
-        super.onDestroyView()
         _binding = null
+        super.onDestroyView()
     }
 
     override fun onAttach(context: Context) {
@@ -120,8 +119,8 @@ class FragmentInputOne : Fragment(R.layout.fragment_input_one) {
     }
 
     override fun onStop() {
-        super.onStop()
         router.clear()
+        super.onStop()
     }
 
     private fun initDagger() {

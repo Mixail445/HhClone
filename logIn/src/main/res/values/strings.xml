@@ -2,4 +2,15 @@
 <resources>
     <string name="InputInLK">Вход в личный кабинет</string>
     <string name="error_email">Вы ввели неверный e-mail</string>
+    <string name="text_title_one">Поиск работы</string>
+    <string name="text_bv_main">Продолжить</string>
+    <string name="text_bv_main2">Войти с паролем</string>
+    <string name="text_tv_child_3">Поиск сотрудников</string>
+    <string name="text_tv_child_2">Размещение вакансий и доступ к базе резюме</string>
+    <string name="text_bv_child">Я ищу сотрудников</string>
+    <string name="text_place_holder">Электронная почта или телефон</string>
+    <string name="text_tv_title_two">Отправили код на</string>
+    <string name="text_tv_child_title">Напишите его, чтобы подтвердить, что это вы, а не кто-то другой входит в личный кабине</string>
+    <string name="et_symbol">*</string>
+    <string name="text_bv_responses">Подтвердить</string>
 </resources>

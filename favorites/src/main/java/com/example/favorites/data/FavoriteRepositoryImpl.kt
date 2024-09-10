@@ -1,5 +1,6 @@
 package com.example.favorites.data
 
+import com.example.favorites.data.local.mapToDomain
 import com.example.favorites.domain.FavoriteLocalSource
 import com.example.favorites.domain.FavoriteRepository
 import com.example.favorites.domain.model.FavoriteVacancy

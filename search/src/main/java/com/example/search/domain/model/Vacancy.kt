@@ -1,6 +1,6 @@
 package com.example.search.domain.model
 
-import com.example.search.data.local.FavoriteVacancyEntity
+import com.example.data.FavoriteVacancyEntity
 import com.example.search.ui.SearchUiMapper
 import com.example.search.ui.VacanciesUi
 
